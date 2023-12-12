@@ -17,7 +17,7 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundlerIdentifier":"com.linh221196.project1"
+      "bundleIdentifier":"com.linh221196.project1"
     },
     "android": {
       "adaptiveIcon": {
@@ -32,6 +32,7 @@
     },
     "plugins": [
       "expo-router"
+      
     ],
     "extra": {
       "router": {

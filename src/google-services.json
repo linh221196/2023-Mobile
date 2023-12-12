@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "176731757886",
+    "project_id": "schedsense",
+    "storage_bucket": "schedsense.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:176731757886:android:c7aee623f8723df567606f",
+        "android_client_info": {
+          "package_name": "com.MobPoj.SchedSense"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "176731757886-ap367eahsg57g4psced56ruco5tjem1g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA_RnfoiHJRWWVToTQb8T2wS2pnSumntz4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "176731757886-4bsmrepi98la5qnhqt5usoh65p78k7tp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

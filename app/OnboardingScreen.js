@@ -1,19 +1,27 @@
-import { Dimensions, Pressable, StyleSheet, Text, View } from 'react-native'
+import { Image,Pressable, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import Onboarding from 'react-native-onboarding-swiper';
-import Lottie from 'lottie-react-native'
 import { useNavigation } from 'expo-router';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const OnboardingScreen = () => {
+
+    const handleDone = async () => {
+        try {
+            await AsyncStorage.setItem('onBoarded', '1');
+            navigation.navigate('WelcomeScreen');
+        } catch (e) {
+            // saving error
+            console.error("Error saving onboarding status", e);
+        }
+    };
     const navigation = useNavigation()
-    const handleDone =()=>{
-        navigation.navigate('WelcomeScreen')
-    }
+    
     const doneButton =({...props})=>{
         return(
             <View >
                 <Pressable style={styles.doneButton} onPress={handleDone}>
-                    <Text style={{color:'#6f42f7', fontWeight: 'bold'}}>Get Started</Text>
+                    <Text className='font-bold' >Get Started</Text>
                 </Pressable>
             </View>
         )
@@ -29,33 +37,20 @@ const OnboardingScreen = () => {
             pages={[
                 {
                 backgroundColor: '#a7f3d0',
-                image: (
-                    <View style={styles.lottie}>
-                        <Lottie source={require('../assets/animations/Girl.json')} autoPlay loop/>
-                    </View>
-                ),
+                image:  <Image source={require('../assets/calendar-timer.png')} style={{width:350,height:350}}/>,
                     title: 'Alarm and App Push',
                     subtitle: 'Never forget your schedules',
                 },
 
                 {
                     backgroundColor: '#fef3c7',
-                    image: (
-                        <View style={styles.lottie}>
-                        <Lottie source={require('../assets/animations/Scanner.json')} autoPlay loop/>
-                        </View>
-                    ),
-                    
+                    image: <Image source={require('../assets/amazon-seller-app.jpg')} style={{width:350,height:350, borderRadius:80}}  />,
                     title: 'Convenience and More',
                     subtitle: 'Auto create schedule with our Camera Scanner',
                 },
                 {
                     backgroundColor: '#a78bfa',
-                    image: (
-                        <View style={styles.lottie}>
-                        <Lottie source={require('../assets/animations/CalendarGuy.json')} autoPlay loop/>
-                        </View>
-                    ),
+                    image: <Image source={require('../assets/welcome.png')} style={{width:350,height:350}}/>,
                     title: 'Achieve Higher Goals',
                     subtitle: 'Get your work done without interruption',
                 },
@@ -82,7 +77,8 @@ const styles = StyleSheet.create({
         padding:15,
         backgroundColor:'white',
         borderTopLeftRadius: 15,
-        borderBottomLeftRadius: 15
+        borderBottomLeftRadius: 15,
+        font:'bold'
         
     }
 })
