@@ -8,13 +8,16 @@ export default function WelcomeScreen() {
       <Text>Welcome Screen</Text>
       <StatusBar style="auto" />
       <View  style={styles.buttonContainer}>
-        <Link href={'HomePage' } asChild>    
-                <Pressable>
+        <Pressable style={styles.button}>
+                <Text >Sign in with Google</Text>
+        </Pressable>
+        <Link href={'/(tabs)/home' } asChild>    
+                <Pressable style={styles.button}>
                     <Text>Login</Text>
                 </Pressable>
         </Link>  
         <Link href={'SignUp' } asChild>    
-                <Pressable>
+                <Pressable style={styles.button}>
                     <Text>Sign Up</Text>
                 </Pressable>
         </Link>
@@ -35,5 +38,11 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
-  }
+  },
+  button:{
+    margin: 5,
+    borderRadius: 10,
+    backgroundColor: 'sky-blue'
+  },
+  
 });
